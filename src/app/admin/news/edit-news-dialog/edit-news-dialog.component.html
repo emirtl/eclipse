@@ -1,0 +1,61 @@
+<div class="authors">
+  <h1 class="mb-0 p-0">{{title}}</h1>
+  <form [formGroup]="form">
+    <p-iftalabel class="mt-2">
+      <input pInputText id="title" type="text"  formControlName="title" class="w-full">
+      <label for="title">title</label>
+    </p-iftalabel>
+
+    <p-iftalabel class="mt-2">
+      <input pInputText type="text" id="description"  formControlName="description" class="w-full">
+      <label for="description">description</label>
+    </p-iftalabel>
+
+    <p-iftalabel class="mt-2">
+      <textarea class="w-full" pTextarea id="richDescription" formControlName="richDescription" rows="5" cols="30" style="resize: none"></textarea>
+      <label for="richDescription">rich description</label>
+    </p-iftalabel>
+<!--        <p-iftalabel class="mt-2">-->
+<!--          <p-editor formControlName="richDescription" [style]="{ height: '320px' }" />-->
+
+<!--        </p-iftalabel>-->
+
+
+    <div class="coverImage mt-2">
+      <p-button label="cover image" severity="contrast" styleClass="w-full" (onClick)="fileInput.click()"></p-button>
+      <input class="hidden" type="file" #fileInput (change)="onImagePicked($event)" />
+
+      @if (imagePreview){
+       <div class="imagePreview mt-2">
+         <p-image  [src]="imagePreview" width="100"></p-image>
+       </div>
+      }
+
+    </div>
+
+    <div class="author mt-2">
+      <p-select [options]="authors()" formControlName="author" optionValue="id" optionLabel="name" placeholder="Select an author" class="w-full md:w-56" />
+    </div>
+
+
+    <div class="author mt-2">
+      <p-select [options]="categories()" formControlName="category" optionValue="id" optionLabel="title" placeholder="Select a category" class="w-full md:w-56" />
+    </div>
+
+    <p-button  styleClass="mt-3 w-full" [disabled]="isSubmitting" size="large" label="Submit"  severity="primary" (onClick)="onSubmitBtn()"></p-button>
+
+  </form>
+</div>
+
+<!--id?: string;-->
+<!--title?: string;-->
+<!--description?: string;-->
+<!--richDescription?: string;-->
+<!--image?: string;-->
+<!--coverImage?: string;-->
+<!--author?: string;-->
+<!--category?: ICategory;-->
+<!--isFeatured?: string;-->
+<!--isBreakingNews?: string;-->
+<!--isCatchingUp?: string;-->
+<!--numReviews?: string;-->

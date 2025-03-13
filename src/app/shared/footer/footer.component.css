@@ -1,0 +1,40 @@
+.footer{
+  background-color: #18181B;
+
+}
+.white-rabbit{
+  color: #A1FEA0;
+  letter-spacing: 0.1rem;
+  font-size: larger;
+}
+
+/*.footer {*/
+/*  width: 100%;*/
+/*  padding: 1rem;*/
+/*  background-color: var(--surface-100);*/
+/*  border-top: 1px solid var(--surface-300);*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*}*/
+
+/*.container {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  width: 90%;*/
+/*  max-width: 1200px;*/
+/*}*/
+
+/*.left p {*/
+/*  margin: 0;*/
+/*  font-size: 0.9rem;*/
+/*}*/
+
+/*.right {*/
+/*  display: flex;*/
+/*  gap: 1rem;*/
+/*}*/
+
+/*.right .p-button {*/
+/*  font-size: 0.8rem;*/
+/*}*/

@@ -1,0 +1,71 @@
+
+
+<!--Carousel-->
+<div class="grid justify-content-center align-items-center  shadow-6 mt-2">
+    <p-imagecompare class="shadow-lg rounded-2xl w-full sm:w-96 md:w-120 lg:w-160">
+        <ng-template #left>
+            <img src="./assets/Designer%20(11).jpeg" class="w-full h-full object-cover" />
+        </ng-template>
+        <ng-template #right>
+            <img src="./assets/Designer%20(10).jpeg" class="w-full h-full object-cover" />
+        </ng-template>
+
+    </p-imagecompare>
+</div>
+
+
+<p-divider></p-divider>
+
+
+<div class="grid justify-content-center align-items-center">
+
+    @if (news()&&news().length>0){
+
+      @for (item of news(); track item.id){
+        <div class="col-12 sm:col-12 md:col-4 lg:col-4">
+          <a [routerLink]="['/news-item',item.id]" >
+            <p-card [style]="{ width: '31rem', overflow: 'hidden' }" styleClass="shadow-6">
+              <ng-template #header>
+                <img [alt]="item.title" class="w-full" [src]="item.coverImage" />
+              </ng-template>
+              <ng-template #title> {{ item.title}}</ng-template>
+              <ng-template #subtitle> {{ item.category.title }} </ng-template>
+
+              <ng-template #footer>
+
+              </ng-template>
+            </p-card>
+          </a>
+        </div>
+      }
+
+    }
+
+</div>
+
+<!--<p-table [value]="news()" [tableStyle]="{ 'min-width': '60rem' }"-->
+<!--         [paginator]="true"-->
+<!--         [rows]="7"-->
+<!--&gt;-->
+<!--  <ng-template #caption>-->
+<!--    <div class="flex items-center justify-between">-->
+<!--      <span class="text-xl font-bold">News</span>-->
+<!--    </div>-->
+<!--  </ng-template>-->
+
+<!--  <ng-template #body let-item>-->
+<!--    <tr>-->
+<!--      <td>{{ item.title }}</td>-->
+<!--      <td>-->
+<!--        <img-->
+<!--          [src]="item.coverImage"-->
+<!--          [alt]="item.title"-->
+<!--          class="w-20rem rounded"-->
+<!--        />-->
+<!--      </td>-->
+
+<!--      <td>{{ item.description }}</td>-->
+
+<!--    </tr>-->
+<!--  </ng-template>-->
+<!--</p-table>-->

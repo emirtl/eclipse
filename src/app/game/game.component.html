@@ -1,0 +1,20 @@
+<div class="game-container mt-3 m-auto">
+  <div
+    class="cow"
+    [style.left.px]="cow.x"
+    [style.top.px]="cow.y"
+  >
+    🐄
+  </div>
+
+  <div
+    class="person"
+    *ngFor="let person of people"
+    [style.left.px]="person.x"
+    [style.top.px]="person.y"
+  >
+    🏃
+  </div>
+
+  <div class="score">Score: {{ score }}</div>
+</div>

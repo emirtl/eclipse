@@ -1,0 +1,23 @@
+<div class="authors">
+      <h1 class="mb-0 p-0">{{title}}</h1>
+      <form [formGroup]="form">
+          <p-iftalabel class="mt-2">
+            <input pInputText id="name" type="text"  formControlName="name" class="w-full">
+            <label for="name">Name</label>
+          </p-iftalabel>
+
+          <p-iftalabel class="mt-2">
+            <input pInputText type="text" id="position"  formControlName="position" class="w-full">
+            <label for="position">Posotion</label>
+          </p-iftalabel>
+
+          <p-iftalabel class="mt-2">
+            <textarea class="w-full" pTextarea id="description" formControlName="description" rows="5" cols="30" style="resize: none"></textarea>
+            <label for="description">Description</label>
+          </p-iftalabel>
+
+            <p-button [disabled]="isSubmitting" size="large" label="Submit"  severity="primary" (onClick)="onSubmitBtn()"></p-button>
+
+      </form>
+    </div>
+

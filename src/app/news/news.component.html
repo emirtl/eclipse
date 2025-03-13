@@ -1,0 +1,19 @@
+<div class="news">
+  <h2>All News</h2>
+  <div class="grid justify-content-center align-items-center">
+    @for (item of news(); track item.id){
+      <a [routerLink]="['/news-item',item.id]" >
+      <div class="col-12 sm:col-12 md:col-4 lg:col-4">
+        <p-card [style]="{ width: '25rem', overflow: 'hidden' }" styleClass="shadow-6">
+          <ng-template #header>
+            <img [alt]="item.title" class="w-full" [src]="item.coverImage" />
+          </ng-template>
+          <ng-template #title> {{ item.title}}</ng-template>
+          <ng-template #subtitle> {{ item.category.title }} </ng-template>
+
+        </p-card>
+      </div>
+        </a>
+    }
+  </div>
+</div>
