@@ -1,8 +1,15 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  Inject,
+  PLATFORM_ID,
+  DOCUMENT,
+  inject,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { FooterComponent } from './shared/footer/footer.component';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
   selector: 'app-root',

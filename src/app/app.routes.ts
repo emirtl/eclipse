@@ -7,6 +7,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { ContactComponent } from './contact/contact.component';
 import { NewsItemComponent } from './news-item/news-item.component';
 import { GameComponent } from './game/game.component';
+import { authGuard } from './auth/services/auth.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,5 +22,10 @@ export const routes: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.routes').then((x) => x.adminRoutes),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.routes').then((x) => x.authRoutes),
   },
 ];

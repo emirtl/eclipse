@@ -2,17 +2,17 @@
   <div class="col-12 md:col-8 lg:col-8  m-auto">
     <p-card [style]="{ overflow: 'hidden' }">
       <ng-template #header>
-        <img alt="Card" class="w-full" [src]="news().coverImage" />
+        <img alt="Card" class="w-full" [src]="news()?.coverImage" />
       </ng-template>
-      <ng-template #title>{{news().title}}</ng-template>
-      <ng-template #subtitle> {{ news().description }} </ng-template>
+      <ng-template #title>{{news()?.title}}</ng-template>
+      <ng-template #subtitle> {{ news()?.description }} </ng-template>
       <p class="description">
-       {{news().richDescription}}
+       {{news()?.richDescription}}
       </p>
       <ng-template #footer>
         <div class="flex gap-4 mt-1">
-          <span class="text-400" >{{news().category.title}}</span>
-          <span class="text-400">{{news().author.name}}</span>
+          <span class="text-400" >{{news()?.category.title}}</span>
+          <span class="text-400">{{news()?.author.name}}</span>
 
         </div>
       </ng-template>

@@ -1,7 +1,7 @@
 <p-toolbar>
   <ng-template #start>
-    <img routerLink="/" src="./assets/d04d23c82edb485aa1ae641b93687278.webp" style="width: 4rem">
-    <h3 class="ml-2 font-bold">Eclipse News</h3>
+    <img routerLink="/" src="./assets/d04d23c82edb485aa1ae641b93687278.webp" class="cursor-pointer" style="width: 4rem">
+    <h3 class="ml-2 font-bold cursor-pointer hover:text-white-alpha-80" routerLink="/">Eclipse News</h3>
   </ng-template>
   <ng-template #center>
     <p-iconfield iconPosition="left">
@@ -12,10 +12,18 @@
   <ng-template #end>
     <p-splitbutton label="Admin" [model]="items" styleClass="mr-2"/>
     <p-button label="News" text routerLink="/news" ></p-button>
-    <p-button label="Game" icon="pi pi-twitch" text routerLink="/game"></p-button>
-    <p-button label="Register" icon="pi pi-user-plus" text></p-button>
-    <p-button label="Login" icon="pi pi-sign-in" text></p-button>
-    <p-button label="Logout" icon="pi pi-sign-out" text></p-button>
+
+    @if (isLoggedIn()) {
+
+
+      <p-button label="Game" icon="pi pi-twitch" text routerLink="/game"></p-button>
+      <p-button label="Logout" icon="pi pi-sign-out" text (onClick)="onLogout()"></p-button>
+    }
+    @else {
+
+      <p-button label="Register" icon="pi pi-user-plus" text routerLink="/auth/register"></p-button>
+      <p-button label="Login" icon="pi pi-sign-in" text routerLink="/auth/login"></p-button>
+    }
 
 
 

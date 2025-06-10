@@ -1,1 +1,49 @@
-<p>register works!</p>
+<div class=" mt-3 grid  justify-content-center align-items-center" [style]="{ width: '50rem',margin:'auto'}">
+<div class="col-10">
+  <p-card header="register Form" subheader="you can register using the form below" [style]="{ width: '36rem',margin:'auto' }">
+
+<div class="toast mb-3">
+    <p-message>this website is currently under construction </p-message>
+
+</div>
+
+      <form [formGroup]="form">
+
+   <div class="field">
+     <input type="text" pInputText placeholder="username.." class="w-full" formControlName="username" />
+   </div>
+
+   <div class="field">
+     <input type="text" pInputText placeholder="E-Mail.." class="w-full" formControlName="email" />
+   </div>
+
+<div class="field" >
+  <p-password id="password1" type="password" class="w-full" [feedback]="true" placeholder="Password"
+              formControlName="password"
+              [style]="{'width':'100%'}"
+              [inputStyle]="{'width':'100%'}" [toggleMask]="true">
+    <ng-template pTemplate="footer">
+      <p-divider />
+      <p class="mt-2">Suggestions</p>
+      <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+        <li>At least one lowercase</li>
+        <li>At least one uppercase</li>
+        <li>At least one numeric</li>
+        <li>At least one special character</li>
+        <li>Minimum 8 characters</li>
+      </ul>
+    </ng-template>
+  </p-password>
+
+</div>
+
+
+   <div class="flex gap-3">
+     <p-button label=" back to Login" severity="contrast" class="w-full" styleClass="w-full" routerLink="/auth/login" />
+     <p-button disabled label="Register" class="w-full" severity="primary" styleClass="w-full" (onClick)="onRegister()"/>
+   </div>
+ </form>
+
+  </p-card>
+</div>
+</div>
