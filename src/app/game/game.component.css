@@ -5,6 +5,7 @@
   border: 2px solid black;
   overflow: hidden;
   background-color: lightgreen;
+}
 
 .cow, .person {
   position: absolute;
