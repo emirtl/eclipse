@@ -23,6 +23,7 @@ export class NewsService {
 
   async insert(news: FormData): Promise<INews> {
     const INews$ = this.http.post(`${this.env}/news/insert`, news);
+
     const result = await firstValueFrom(INews$);
     return result['news'];
   }
